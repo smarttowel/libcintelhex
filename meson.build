@@ -5,7 +5,9 @@ project('libcintelhex', 'c',
                        'prefix=/usr'])
 
 libcintelhex_lib = static_library('libcintelhex',
+                                  'src/ihex_copy.c',
                                   'src/ihex_parse.c',
+                                  'src/ihex_record.c',
                                    include_directories: include_directories('include'))
 libcintelhex_dep = declare_dependency(link_with: libcintelhex_lib,
                                       include_directories: include_directories('include'))
